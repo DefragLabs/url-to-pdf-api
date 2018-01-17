@@ -33,9 +33,9 @@ async function render(_opts = {}) {
   logOpts(opts);
 
   const browser = await puppeteer.launch({
-    headless: !config.DEBUG_MODE,
+    executablePath: '/usr/bin/chromium-browser',
     ignoreHTTPSErrors: opts.ignoreHttpsErrors,
-    args: ['--disable-gpu', '--no-sandbox', '--disable-setuid-sandbox'],
+    args: ['--disable-gpu', '--no-sandbox', '--headless', '--disable-setuid-sandbox'],
     sloMo: config.DEBUG_MODE ? 250 : undefined,
   });
   const page = await browser.newPage();
