@@ -9,3 +9,4 @@ services:
       - '9000:9000'
     environment:
       - ALLOW_HTTP=true
+      - DEBUG_MODE=false

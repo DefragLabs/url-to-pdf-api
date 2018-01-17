@@ -97,8 +97,8 @@ async function render(_opts = {}) {
     logger.error(err.stack);
     throw err;
   } finally {
-    logger.info('Closing browser..');
     if (!config.DEBUG_MODE) {
+      logger.info('Closing browser..');
       await browser.close();
     }
   }
